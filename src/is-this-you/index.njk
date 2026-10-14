@@ -5,8 +5,14 @@ description: Ask for a YipDen directory listing to be removed or corrected.
 ---
 <h1>Is this you?</h1>
 <p>
-  YipDen's directory lists creators by hand. If you're listed and want to be removed, or something
-  about your listing is wrong, tell us here. Removals are honoured; no reason needed.
+  YipDen's directory lists creators by hand. If you're listed, tell us here: ask to be removed, fix
+  something that's wrong, or say it's you and you're happy to be listed. Removals are honoured; no
+  reason needed.
+</p>
+<p id="join" class="join" hidden>
+  You have your own website, so you can also
+  <a href="https://app.indienodes.us/join">join the IndieNodes ring</a>: members choose to be listed
+  and appear in YipDen as IndieNodes members.
 </p>
 
 {% if site.removalWebhook %}
@@ -21,9 +27,13 @@ description: Ask for a YipDen directory listing to be removed or corrected.
     <legend>What would you like?</legend>
     <label><input type="radio" name="action" value="remove" checked /> Remove my listing</label>
     <label><input type="radio" name="action" value="correct" /> Correct my listing</label>
+    <label
+      ><input type="radio" name="action" value="confirm" /> Yes, that's me: keep me listed</label
+    >
   </fieldset>
   <label for="listing">Your site, profile or handle as listed</label>
   <input id="listing" name="listing" type="text" required autocomplete="url" />
+  <input id="listing-id" name="listing_id" type="hidden" />
   <label for="details">Anything we should know (optional)</label>
   <textarea id="details" name="details" rows="4" maxlength="2000"></textarea>
   <label for="contact">Email for a reply (optional)</label>

@@ -35,11 +35,17 @@ The page's Content-Security-Policy (in the [Caddyfile](Caddyfile)) allows postin
 
 ## Pages
 
-| Path            | What it is                                                                                                 |
-| --------------- | ---------------------------------------------------------------------------------------------------------- |
-| `/`             | What YipDen is. Placeholder copy; download links once the app is listed.                                   |
-| `/privacy/`     | The privacy policy. **A draft**: written and reviewed before the store links here.                         |
-| `/is-this-you/` | Remove or correct a directory listing. Contract: [docs/directory-requests.md](docs/directory-requests.md). |
+| Path            | What it is                                                                                                          |
+| --------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `/`             | What YipDen is. Placeholder copy; download links once the app is listed.                                            |
+| `/privacy/`     | The privacy policy. **A draft**: written and reviewed before the store links here.                                  |
+| `/is-this-you/` | Remove, correct or confirm a directory listing. Contract: [docs/directory-requests.md](docs/directory-requests.md). |
+
+## The creator directory
+
+yipden.com also serves YipDen's creator directory (`/directory/people.json`, `optouts.json` and
+their schemas), proxied live from yipden-app's `main` branch. See
+[docs/directory-requests.md](docs/directory-requests.md).
 
 ## Still to do
 
