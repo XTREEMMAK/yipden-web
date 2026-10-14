@@ -23,12 +23,12 @@ The output is static: there is no server process to read an environment variable
 requested, so every setting is baked in when the site (or the image) is built. Changing one means
 rebuilding. See [.env.example](.env.example).
 
-| Variable              | What it does                                                           |
-| --------------------- | ---------------------------------------------------------------------- |
-| `SITE_ORIGIN`         | The deployed origin. Default `https://yipden.com`.                     |
-| `REMOVAL_WEBHOOK_URL` | Where "Is this you?" posts (n8n). Public. Unset: the form says closed. |
-| `TURNSTILE_SITE_KEY`  | Cloudflare Turnstile's public key. The secret key lives in n8n.        |
-| `CONTACT_EMAIL`       | Shown while the form is closed. Unset: no address is shown.            |
+| Variable              | What it does                                                              |
+| --------------------- | ------------------------------------------------------------------------- |
+| `SITE_ORIGIN`         | The deployed origin. Default `https://yipden.com`.                        |
+| `REMOVAL_WEBHOOK_URL` | Where "Is this you?" posts (n8n). Public. Unset: the form says closed.    |
+| `TURNSTILE_SITE_KEY`  | Cloudflare Turnstile's public key. The secret key lives in n8n.           |
+| `CONTACT_EMAIL`       | Shown while the form is closed. Default `jamaal@j2it.us`; empty hides it. |
 
 The page's Content-Security-Policy (in the [Caddyfile](Caddyfile)) allows posting to
 `n8n.kjnet.us` and Turnstile from Cloudflare, and nothing else off the site.
