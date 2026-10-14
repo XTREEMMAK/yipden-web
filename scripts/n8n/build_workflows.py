@@ -38,16 +38,16 @@ N8N_BASE = "https://n8n.kjnet.us"
 API = f"{N8N_BASE}/api/v1"
 
 # Filled in from --create-tables.
-TABLE_REQUESTS = ""
-TABLE_RATE_LIMITS = ""
+TABLE_REQUESTS = "jQPC5vmy2nlUNVl1"
+TABLE_RATE_LIMITS = "TBw8H8Cq8OgWhY3m"
 
 DATA_TABLES_SCHEMA = json.loads((HERE / "data-tables-schema.json").read_text())
 
-CRYPTO_CREDENTIAL = {"id": "", "name": "YipDen - Review Link HMAC"}
-RATE_LIMIT_CREDENTIAL = {"id": "", "name": "YipDen - Rate Limit Salt"}
-TURNSTILE_CREDENTIAL = {"id": "", "name": "YipDen - Turnstile Secret"}
-GOTIFY_CREDENTIAL = {"id": "", "name": "YipDen Notifications"}
-GITHUB_CREDENTIAL = {"id": "", "name": "Github PAT - YipDen"}
+CRYPTO_CREDENTIAL = {"id": "JYMNbKffktAQll4k", "name": "YipDen - Review Link HMAC"}
+RATE_LIMIT_CREDENTIAL = {"id": "JkbuIsOLvTKzx2A6", "name": "YipDen - Rate Limit Salt"}
+TURNSTILE_CREDENTIAL = {"id": "Xg8iC0nkUnK0nwTX", "name": "YipDen - Turnstile Secret"}
+GOTIFY_CREDENTIAL = {"id": "HHn5tGkeTH4JaGhj", "name": "YipDen Notifications"}
+GITHUB_CREDENTIAL = {"id": "fy3nhsblMq8H1cHP", "name": "Github PAT - YipDen"}
 
 # The repository whose `directory-optout` workflow an approved removal runs.
 GITHUB_REPO = "XTREEMMAK/yipden-app"
