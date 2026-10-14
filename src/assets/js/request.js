@@ -48,13 +48,15 @@ form?.addEventListener("submit", async (event) => {
       body: JSON.stringify(body),
     });
     const reply = await response.json().catch(() => ({}));
-    status.textContent = response.ok
+    // n8n answers a refused request with 200 and `ok: false`, as indienodes-app's forms do.
+    const accepted = response.ok && reply.ok !== false;
+    status.textContent = accepted
       ? body.action === "confirm"
         ? "Thanks for confirming. Nothing else is needed from you."
         : "Thanks. Your request is with us, and nothing else is needed from you."
       : reply.message ||
         "That didn't go through. Please try again, or email us.";
-    if (response.ok) form.reset();
+    if (accepted) form.reset();
   } catch {
     status.textContent =
       "That didn't go through. Please try again, or email us.";

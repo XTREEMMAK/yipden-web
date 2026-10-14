@@ -1,0 +1,21 @@
+{
+  "yipden_directory_requests": {
+    "columns": [
+      { "name": "request_id", "type": "string" },
+      { "name": "action", "type": "string" },
+      { "name": "listing", "type": "string" },
+      { "name": "listing_id", "type": "string" },
+      { "name": "details", "type": "string" },
+      { "name": "contact", "type": "string" },
+      { "name": "status", "type": "string" },
+      { "name": "created_at", "type": "date" },
+      { "name": "resolved_at", "type": "date" }
+    ]
+  },
+  "yipden_rate_limits": {
+    "columns": [
+      { "name": "ip_hash", "type": "string" },
+      { "name": "created_at", "type": "date" }
+    ]
+  }
+}
