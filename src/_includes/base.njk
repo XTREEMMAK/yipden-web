@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% if title %}{{ title }} · {% endif %}{{ site.name }}</title>
+    <meta name="description" content="{{ description or site.line }}" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href="/">{{ site.name }}</a>
+      <nav aria-label="Site">
+        <a href="/privacy/">Privacy</a>
+        <a href="/is-this-you/">Is this you?</a>
+      </nav>
+    </header>
+    <main id="main">{{ content | safe }}</main>
+    <footer class="foot">
+      <p>{{ site.line }} No accounts, no AI, no ranking, no tracking.</p>
+      <p><a href="{{ site.repo }}">Source</a> · GPL-3.0-or-later</p>
+    </footer>
+  </body>
+</html>

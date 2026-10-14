@@ -1,0 +1,15 @@
+# Infra terminates TLS and forwards HTTP to this unprivileged port.
+:8080 {
+	root * /srv
+	encode zstd gzip
+	header {
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		X-Frame-Options "DENY"
+		# The form posts to n8n and may show Turnstile; nothing else leaves the page.
+		Content-Security-Policy "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; img-src 'self' https: data:; connect-src 'self' https://n8n.kjnet.us; frame-src https://challenges.cloudflare.com; font-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'"
+	}
+	try_files {path} {path}.html {path}/
+	file_server
+}

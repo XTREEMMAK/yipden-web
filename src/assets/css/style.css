@@ -1,0 +1,75 @@
+/* Placeholder styling only; the design is its own session. */
+:root {
+  --ink: #1d1410;
+  --muted: #6b5a52;
+  --bg: #f7f2ee;
+  --brand: #c2410c;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font:
+    17px/1.55 system-ui,
+    sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+.top,
+main,
+.foot {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.top nav {
+  display: flex;
+  gap: 1rem;
+}
+a {
+  color: var(--brand);
+}
+.brand {
+  font-weight: 700;
+  text-decoration: none;
+}
+.line {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.request {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 32rem;
+}
+.request input[type="text"],
+.request input[type="email"],
+.request textarea {
+  font: inherit;
+  padding: 0.6rem;
+  min-height: 44px;
+}
+.request button {
+  font: inherit;
+  min-height: 44px;
+  padding: 0 1.2rem;
+  background: var(--brand);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+}
+.hp {
+  position: absolute;
+  left: -9999px;
+}
+.foot {
+  color: var(--muted);
+  font-size: 0.9rem;
+}

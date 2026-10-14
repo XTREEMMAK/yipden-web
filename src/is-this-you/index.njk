@@ -1,0 +1,49 @@
+---
+layout: base.njk
+title: Is this you?
+description: Ask for a YipDen directory listing to be removed or corrected.
+---
+<h1>Is this you?</h1>
+<p>
+  YipDen's directory lists creators by hand. If you're listed and want to be removed, or something
+  about your listing is wrong, tell us here. Removals are honoured; no reason needed.
+</p>
+
+{% if site.removalWebhook %}
+<form
+  id="request"
+  class="request"
+  data-webhook="{{ site.removalWebhook }}"
+  data-turnstile="{{ site.turnstileSiteKey }}"
+  novalidate
+>
+  <fieldset>
+    <legend>What would you like?</legend>
+    <label><input type="radio" name="action" value="remove" checked /> Remove my listing</label>
+    <label><input type="radio" name="action" value="correct" /> Correct my listing</label>
+  </fieldset>
+  <label for="listing">Your site, profile or handle as listed</label>
+  <input id="listing" name="listing" type="text" required autocomplete="url" />
+  <label for="details">Anything we should know (optional)</label>
+  <textarea id="details" name="details" rows="4" maxlength="2000"></textarea>
+  <label for="contact">Email for a reply (optional)</label>
+  <input id="contact" name="contact" type="email" autocomplete="email" />
+  <!-- A field people never see: a bot that fills it is dropped by n8n. -->
+  <div class="hp" aria-hidden="true">
+    <label for="website">Leave this empty</label>
+    <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+  </div>
+  {% if site.turnstileSiteKey %}
+  <div class="cf-turnstile" data-sitekey="{{ site.turnstileSiteKey }}"></div>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  {% endif %}
+  <button type="submit">Send request</button>
+  <p id="status" role="status" aria-live="polite"></p>
+</form>
+<script src="/assets/js/request.js" type="module"></script>
+{% else %}
+<p class="closed">
+  Requests aren't open on this page yet.{% if site.contactEmail %} Until they are, email
+  <a href="mailto:{{ site.contactEmail }}">{{ site.contactEmail }}</a>.{% endif %}
+</p>
+{% endif %}

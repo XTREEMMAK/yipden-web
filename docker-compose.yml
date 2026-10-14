@@ -1,0 +1,16 @@
+# Local convenience; infra can deploy the same image with its own orchestration.
+services:
+  yipden-web:
+    image: yipden-web
+    container_name: yipden-web
+    build:
+      context: .
+      args:
+        PUID: ${PUID:-1000}
+        PGID: ${PGID:-1000}
+        SITE_ORIGIN: ${SITE_ORIGIN:-https://yipden.com}
+        REMOVAL_WEBHOOK_URL: ${REMOVAL_WEBHOOK_URL:-}
+        TURNSTILE_SITE_KEY: ${TURNSTILE_SITE_KEY:-}
+        CONTACT_EMAIL: ${CONTACT_EMAIL:-}
+    ports:
+      - "${PORT:-8080}:8080"
