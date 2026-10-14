@@ -11,6 +11,6 @@ services:
         SITE_ORIGIN: ${SITE_ORIGIN:-https://yipden.com}
         REMOVAL_WEBHOOK_URL: ${REMOVAL_WEBHOOK_URL:-}
         TURNSTILE_SITE_KEY: ${TURNSTILE_SITE_KEY:-}
-        CONTACT_EMAIL: ${CONTACT_EMAIL:-}
+        CONTACT_EMAIL: ${CONTACT_EMAIL-jamaal@j2it.us}
     ports:
       - "${PORT:-8080}:8080"

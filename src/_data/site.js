@@ -10,7 +10,7 @@ export default {
   removalWebhook: process.env.REMOVAL_WEBHOOK_URL || "",
   // Cloudflare Turnstile's public site key. The secret key lives in n8n, never here.
   turnstileSiteKey: process.env.TURNSTILE_SITE_KEY || "",
-  // Shown when the form is closed. Unset: the page says requests aren't open yet, and nothing more.
-  contactEmail: process.env.CONTACT_EMAIL || "",
+  // Shown when the form is closed. Set CONTACT_EMAIL to an empty string to show no address.
+  contactEmail: process.env.CONTACT_EMAIL ?? "jamaal@j2it.us",
   repo: "https://github.com/XTREEMMAK/yipden-app",
 };
